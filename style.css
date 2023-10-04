@@ -1,3 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
 .calendar {
   width: 400px;
 }
@@ -12,4 +20,15 @@
   top: 2em;
   border: none;
   background: none;
+}
+.table {
+  width: 100%;
+  background-color: grey;
+  color: white;
+  padding: 30px;
+}
+
+.table tbody {
+  position: relative;
+  left: 1em;
 }

@@ -1,0 +1,15 @@
+.calendar {
+  width: 400px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.header button {
+  height: 20px;
+  position: relative;
+  top: 2em;
+  border: none;
+  background: none;
+}

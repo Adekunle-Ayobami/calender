@@ -4,19 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevMonthButton = document.getElementById("prevMonth");
   const nextMonthButton = document.getElementById("nextMonth");
 
-  let currentDate = new Date();
+  let currentDate = new Date(); // Define currentDate outside the renderCalendar function
 
   function renderCalendar() {
-    const lastDay = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() + 1,
-      0
-    ).getDate();
-    const firstDayIndex = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth(),
-      1
-    ).getDay();
+    const currentDay = currentDate.getDate();
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+
+    const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
 
     const monthYearString = currentDate.toLocaleString("default", {
       month: "long",
@@ -31,10 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     for (let day = 1; day <= lastDay; day++) {
-      calendarHtml += `<td>${day}</td>`;
+      let cell = `<td>${day}</td>`;
       if ((day + firstDayIndex) % 7 === 0) {
-        calendarHtml += "</tr><tr>";
+        cell = "</tr><tr>";
       }
+      if (
+        currentDay === day &&
+        currentMonth === currentMonth &&
+        currentYear === currentYear
+      ) {
+        cell = `<td class="highlighted-day">${day}</td>`;
+      }
+      calendarHtml += cell;
     }
 
     calendarBody.innerHTML = calendarHtml;

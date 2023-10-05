@@ -7,7 +7,7 @@ body {
   background-color: #f0f0f0;
 }
 .calendar {
-  width: 400px;
+  width: 800px;
 }
 .header {
   display: flex;
@@ -23,12 +23,24 @@ body {
 }
 .table {
   width: 100%;
-  background-color: grey;
-  color: white;
   padding: 30px;
+  border-collapse: collapse;
+  background-color: #fff;
 }
 
 .table tbody {
   position: relative;
-  left: 1em;
+  left: 1.7em;
+}
+.table thead {
+  background-color: #7ac769;
+}
+.table th {
+  padding: 20px;
+}
+.table td {
+  padding: 20px;
+}
+.highlighted-day {
+  background-color: #f0f0f0;
 }
